@@ -1,0 +1,12 @@
+{{>header}}
+
+<form method="POST" action="/tasks" class="form"> 
+ <input type="text" name="description" placeholder="description">
+ <div class="form-group">
+  <input type="checkbox" name="completed" id="completed" placeholder="completed"> <label for="completed">Completed</label>
+ </div>
+ 
+
+ <button class="small task__box-button">submit</button>
+</form>
+ {{>footer}}

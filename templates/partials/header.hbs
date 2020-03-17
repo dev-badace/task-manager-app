@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://vignette.wikia.nocookie.net/blackclover/images/b/b2/Black_Bull_Insignia.png/revision/latest/top-crop/width/360/height/360?cb=20170919183456">
+  <title>Task</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul class="navbar__ul">
+    <li class="navbar__li-item navbar__li-item-heading item-left"><a class="navbar__li-link" href="/">Home</a></li>
+    <li class="navbar__li-item "><a class="navbar__li-link" href="/tasks">Tasks</a></li>
+    <li class="navbar__li-item"><a class="navbar__li-link" href="/tasks/new">Create task</a></li>
+    {{#if session.userId}}
+     <li class="navbar__li-item"><a class="navbar__li-link" href="/users/me"><img src="http://localhost:3000/users/{{session.userId}}/avatar" alt="userImage" class="profile"> </a></li>
+    {{/if}}
+    {{#unless session.userId}}
+    <li class="navbar__li-item"><a class="navbar__li-link" href="/login">login</a></li>
+    <li class="navbar__li-item"><a class="navbar__li-link" href="/signup">signup</a></li>
+    {{/unless}}
+  </ul>
+</nav>
+{{#if session.error}}
+<div class="alert error">
+  {{session.error}}
+</div>
+{{/if}}

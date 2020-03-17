@@ -1,0 +1,25 @@
+{{>header}}
+
+ {{#if authErr}}
+  <div class="alert error">{{authErr}}</div>
+ {{/if}}
+
+
+
+<form action="/login" method="POST" class="form"> 
+ <input type="text" name="email" placeholder="email">
+
+ {{#if errors}}
+ {{getError errors 'email'}}
+ {{/if}}
+
+ <input type="text" name="password" placeholder="password">
+
+ {{#if errors}}
+ {{getError errors 'password'}}
+ {{/if}}
+ 
+ <button class="small task__box-button">submit</button>
+</form>
+
+{{>footer}}

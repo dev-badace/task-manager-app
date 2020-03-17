@@ -1,0 +1,9 @@
+{{>header}}
+
+<form action="/tasks/{{_id}}?_method=PUT" method="POST"> 
+ <textarea type="text" name="description" rows="20" cols="50"  placeholder="description">{{description}}</textarea>
+ <input type="checkbox" name="completed"  id="completed" {{completed}}> <label for="completed">Completed</label>
+
+ <button>submit</button>
+</form>
+ {{>footer}}

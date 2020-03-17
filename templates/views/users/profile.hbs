@@ -1,0 +1,35 @@
+{{>header}}
+{{#with user}}
+
+
+<div class="user-profile">
+ <div class="user-profile-title"> Your Profile </div>
+ <div class="user-profile-info">
+    <div class="user-profile-image">
+    <div ><img  class="detailedProfile" src="http://localhost:3000/users/{{_id}}/avatar" alt="Profile Image"></div>
+  </div>
+  <div class="user-profile-description">
+     <div class="user-desc"> <div class="user-desc-head">Name</div> :  {{name}}</div>
+     <div class="user-desc"> <div class="user-desc-head">Age</div> :  {{age}}</div>
+     <div class="user-desc"> <div class="user-desc-head">Email</div> :   {{email}}</div>
+  </div>
+ </div>
+ <hr class="bb">
+ <div class="user-profile-links">
+
+   <form action="/users/edit">
+     <button class="task__box-button">Edit</button>
+   </form>
+   
+   <form action="/users/profile">
+     <button class="task__box-button">delete</button>
+   </form>
+   
+ </div>
+   
+ 
+</div>
+{{/with}}
+
+
+{{>footer}}

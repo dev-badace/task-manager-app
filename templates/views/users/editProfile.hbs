@@ -1,0 +1,17 @@
+{{>header}}
+
+{{#with user}}
+<form action="/users?_method=PUT" method="POST" class="form"> 
+
+ <input type="text" name="name" value="{{name}}" valuplaceholder="name">
+
+ <input type="Number" name="age" value="{{age}}" placeholder="age">
+
+ <input type="text" name="email" value="{{email}}" placeholder="email">
+
+ <a class="align-form-link" href="/users/{{_id}}/changePassword">Change Password</a>
+{{/with}}
+ <button class="small task__box-button">submit</button>
+</form>
+
+{{>footer}}

@@ -1,0 +1,28 @@
+{{>header}}
+
+<form action="/signup" method="POST" class="form" enctype="multipart/form-data"> 
+ <input type="text" name="name" placeholder="name">
+ <input type="text" name="email" placeholder="email">
+
+ {{#if errors}}
+ {{getError errors 'email'}}
+ {{/if}}
+
+ <input type="text" name="password" placeholder="password">
+
+ {{#if errors}}
+ {{getError errors 'password'}}
+ {{/if}}
+
+ <input type="text" name="confirmPassword" placeholder="confirm password">
+
+ {{#if errors}}
+ {{getError errors 'confirmPassword'}}
+ {{/if}}
+
+ <input type="file" name="image">
+ 
+ <button class="small task__box-button">submit</button>
+</form>
+
+{{>footer}}
