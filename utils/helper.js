@@ -12,14 +12,10 @@ hbs.registerHelper('getError', (errors,param) =>{
 hbs.registerHelper('substring', string => string.substring(0,100))
 
 hbs.registerHelper('getImg' , userId => {
-   User.findById(userId,(err,foundUser)=>{
-    
-    return foundUser.avatar
-    
-  })
-
-  
+   return `${process.env.IMG_SITE}/${userId}/avatar`
 })
+
+
 
 const isUserPassword = async (password,{id,email}) =>{
   let user

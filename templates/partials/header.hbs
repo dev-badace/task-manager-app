@@ -14,7 +14,7 @@
     <li class="navbar__li-item "><a class="navbar__li-link" href="/tasks">Tasks</a></li>
     <li class="navbar__li-item"><a class="navbar__li-link" href="/tasks/new">Create task</a></li>
     {{#if session.userId}}
-     <li class="navbar__li-item"><a class="navbar__li-link" href="/users/me"><img src="http://localhost:3000/users/{{session.userId}}/avatar" alt="userImage" class="profile"> </a></li>
+     <li class="navbar__li-item"><a class="navbar__li-link" href="/users/me"><img src="{{getImg session.userId }}" alt="userImage" class="profile"> </a></li>
     {{/if}}
     {{#unless session.userId}}
     <li class="navbar__li-item"><a class="navbar__li-link" href="/login">login</a></li>
