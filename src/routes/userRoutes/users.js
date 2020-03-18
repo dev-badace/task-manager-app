@@ -39,7 +39,7 @@ router.get('/users/edit',[auth], async (req,res) =>{
   }
 })
 
-router.put('/users',[auth],async (req,res) =>{
+router.patch('/users',[auth],async (req,res) =>{
   
   const id = req.session.userId
   const updates = Object.keys(req.body);

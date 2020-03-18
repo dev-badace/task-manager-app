@@ -1,12 +1,43 @@
 {{>header}}
 
 {{#with task}}
-<h1>
-  {{description}}
-</h1>
-<h2>
- Completed status: {{completed}}
-</h2>
+<div class="task__box">
+
+ <div class="task__box-description">
+   {{description}}
+ </div>
+ 
+
+ <div class="task__box-down p-1">
+    <div class="task__box-status">
+      <span class="task__box-status-completed">
+         Completed:
+      </span>{{completed}}
+    </div>     
+ </div>
+ <div class="task__box-status p-1">
+      <span class="task__box-status-completed">
+         Created AT:
+      </span>{{createdAt}}
+  </div>
+
+  <div class="task__box-status p-1">
+      <span class="task__box-status-completed">
+         Updated AT:
+      </span>{{updatedAt}}
+  </div>
+ 
+  <div class="task__box-down p-1">
+    <a href="/tasks/{{_id}}/edit" class="task__box-button" >Edit</a>
+    <form action="/tasks/{{_id}}?_method=DELETE" method="POST">
+    <button class="task__box-button" >Delete</button>
+    </form>
+  </div>
+ 
+ 
+
+</div> 
+
 {{/with}}
 
 {{>footer}}
