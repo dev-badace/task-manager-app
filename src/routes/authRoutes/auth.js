@@ -6,7 +6,7 @@ const {emailValidation,passwordValidation,passwordConfirmation,
        registeredUserEmail,registeredUserPassword} = require('../../../utils/validators')
 const {handleError} = require('../../middlewares/error')
 const User = require('../../models/users')
-const {sendWelcomeEmail} = require('../../emails/account')
+// const {sendWelcomeEmail} = require('../../emails/account')
 
 
 const router = express.Router()
@@ -65,6 +65,7 @@ router.post('/signup',
 
   let avatar
   if(req.file){
+    console.log('hey')
     const buffer = await sharp(req.file.buffer).resize({height:250,width:250}).png().toBuffer()
     avatar = buffer
   }
@@ -73,7 +74,7 @@ router.post('/signup',
   const user = await User.create({name,email,password,avatar})
 
    //********************************************************** */
- // sendWelcomeEmail(email,name)   // disabled functionality
+ //! sendWelcomeEmail(email,name)   // disabled functionality
    //************************************************************ */
 
 
