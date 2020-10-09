@@ -324,8 +324,9 @@ footer {
 
 .user-profile {
   display: flex;
-  width: 50rem;
-  min-width: 50vw;
+  overflow: hidden;
+  width: 35rem;
+  min-width: 20rem;
   margin: 2rem auto;
   flex-direction: column;
   background-color: var(--color-primary);
@@ -438,8 +439,38 @@ footer {
   }
 }
 
-@media only screen and (max-width: 685px) {
+@media only screen and (max-width: 500px) {
   body {
+    flex-direction: column;
+  }
+
+  .navbar {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    order: 1;
+    width: 100vw;
+  }
+
+  .navbar__ul {
+    flex-direction: row;
+    height: 10vh;
+    width: 100vw;
+  }
+  .navbar__li-link {
+    font-size: 1.6rem;
+  }
+  .task-form {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    margin-left: 1rem;
+  }
+
+  .task__box-container {
+    justify-content: center;
+  }
+
+  .task__box-detailed .task__box-description {
     font-size: 1.6rem;
   }
 }
