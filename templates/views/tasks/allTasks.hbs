@@ -1,5 +1,9 @@
 {{>header}}
 
+
+
+<div class="task__box-flexContainer">
+
 <form action="/tasks" class="task-form">
  <div class="form-container">
    <div class="form-group">
@@ -20,10 +24,10 @@
       <input type="submit" class="task__box-button">
     </div>
   </div>
- </div>
+ 
 </form>
+<div class="task__box-container">
 
-<div class="task__box-flexContainer">
 {{#each tasks}}
  
 
@@ -40,6 +44,8 @@
   </div>
     
 {{/each}}
+
+</div>
 </div>
 
 {{>footer}}

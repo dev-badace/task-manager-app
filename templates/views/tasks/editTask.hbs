@@ -1,9 +1,13 @@
 {{>header}}
 
-<form action="/tasks/{{_id}}?_method=PUT" method="POST"> 
- <textarea type="text" name="description" rows="20" cols="50"  placeholder="description">{{description}}</textarea>
- <input type="checkbox" name="completed"  id="completed" {{completed}}> <label for="completed">Completed</label>
+<form action="/tasks/{{_id}}?_method=PUT" class="form" method="POST"> 
+ <textarea type="text" name="description" placeholder="Enter your task" class="create__task-input">{{description}}</textarea>
+ <div class="form-group">
+   <input type="checkbox" name="completed"  id="completed" {{completed}}> <label for="completed">Completed</label>
+ </div>
 
- <button>submit</button>
+
+
+<button class="small task__box-button">submit</button>
 </form>
  {{>footer}}

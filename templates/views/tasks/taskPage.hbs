@@ -1,7 +1,7 @@
 {{>header}}
 
 {{#with task}}
-<div class="task__box">
+<div class="task__box-detailed">
 
  <div class="task__box-description">
    {{description}}
@@ -28,7 +28,7 @@
   </div>
  
   <div class="task__box-down p-1">
-    <a href="/tasks/{{_id}}/edit" class="task__box-button" >Edit</a>
+    <a href="/tasks/{{_id}}/edit" class="task__box-button m-2" >Edit</a>
     <form action="/tasks/{{_id}}?_method=DELETE" method="POST">
     <button class="task__box-button spx" >Delete</button>
     </form>

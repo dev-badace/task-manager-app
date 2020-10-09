@@ -28,13 +28,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--color-primary-light);
   color: var(--primary-text);
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
 }
 
 .alert {
   display: inline-block;
   position: absolute;
   top: 5rem;
-  left: 2rem;
+  right: 2rem;
   padding: 1rem 2rem;
   font-size: 2rem;
   font-weight: 300;
@@ -59,12 +62,12 @@ body {
 .task-form {
   font-size: 1.4rem;
   margin: 2rem auto;
-  display: block;
-  width: 70rem;
 }
 .form-container {
   display: flex;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 .form-group {
   display: flex;
@@ -113,6 +116,8 @@ body {
   margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  align-items: center;
 }
 
 .form > input {
@@ -151,6 +156,12 @@ body {
 /*------------------Tasks------------------------------*/
 
 .task__box-flexContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task__box-container {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -158,13 +169,29 @@ body {
 
 .task__box {
   display: flex;
+  max-height: 20rem;
   justify-content: space-between;
   padding: 2rem;
   margin: 2rem 2rem;
   background-color: var(--color-primary);
   border-radius: 1rem;
-  flex-basis: 45rem;
+  width: 35rem;
+  min-width: 20rem;
   flex-direction: column;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(3, 3, 3, 0.204);
+}
+
+.task__box-detailed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  margin: 3rem;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
   word-spacing: 0.2rem;
   letter-spacing: 0.1rem;
   box-shadow: 0 0.25rem 0.5rem rgba(3, 3, 3, 0.204);
@@ -222,23 +249,46 @@ body {
   color: #fff;
 }
 
+.create__task-input {
+  height: 20rem;
+  width: 30rem;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  color: var(--primary-text);
+  outline: none;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.create__task-input::placeholder {
+  color: var(--primary-text);
+}
+
 /*------------------Navbar------------------------------*/
 
 .navbar {
   background-color: #2f3136;
   font-size: 2.2rem;
   border-bottom: 0.5px solid rgba(3, 3, 3, 0.122);
+  flex-basis: 10%;
 }
 
 .navbar__ul {
+  height: 75vh;
   display: flex;
   list-style: none;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .navbar__li-item {
   padding: 1.2rem 2rem;
-  margin: 0 2rem;
+}
+
+.navbar__li-item.img {
+  order: -1;
 }
 .navbar__li-item-heading {
   font-size: 2.5rem;
@@ -250,13 +300,13 @@ body {
   color: #757575;
 }
 
-.item-left {
-  margin-right: auto;
-}
-
 .navbar__li-link {
   color: #dcddde;
   text-decoration: none;
+}
+
+.navbar__li-link.big {
+  font-size: 80%;
 }
 
 footer {
@@ -274,7 +324,8 @@ footer {
 
 .user-profile {
   display: flex;
-  width: 30vw;
+  width: 50rem;
+  min-width: 50vw;
   margin: 2rem auto;
   flex-direction: column;
   background-color: var(--color-primary);
@@ -345,6 +396,10 @@ footer {
   font-size: 1.6rem;
 }
 
+.m-2 {
+  margin-right: 2rem !important;
+}
+
 .p-1 {
   padding: 1rem;
 }
@@ -352,4 +407,39 @@ footer {
 .spx {
   color: var(--color-border);
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 685px) {
+  .task-form {
+    margin-left: 0.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  .task__box-container {
+    justify-content: start;
+  }
+
+  .task__box {
+    width: 29rem;
+  }
+
+  .task__box-status {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .task__box-button {
+    margin-right: 0;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  body {
+    font-size: 1.6rem;
+  }
 }

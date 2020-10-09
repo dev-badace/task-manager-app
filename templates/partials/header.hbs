@@ -12,9 +12,9 @@
   <ul class="navbar__ul">
     <li class="navbar__li-item navbar__li-item-heading item-left"><a class="navbar__li-link" href="/">Home</a></li>
     <li class="navbar__li-item "><a class="navbar__li-link" href="/tasks">Tasks</a></li>
-    <li class="navbar__li-item"><a class="navbar__li-link" href="/tasks/new">Create task</a></li>
+    <li class="navbar__li-item"><a class="navbar__li-link" href="/tasks/new">Create</a></li>
     {{#if session.userId}}
-     <li class="navbar__li-item"><a class="navbar__li-link" href="/users/me"><img src="{{getImg session.userId }}" alt="userImage" class="profile"> </a></li>
+     <li class="navbar__li-item img"><a class="navbar__li-link" href="/users/me"><img src="{{getImg session.userId }}" alt="userImage" class="profile"> </a></li>
     {{/if}}
     {{#unless session.userId}}
     <li class="navbar__li-item"><a class="navbar__li-link" href="/login">login</a></li>
